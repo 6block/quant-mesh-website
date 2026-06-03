@@ -1,0 +1,536 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0a0e12" />
+    <!-- Critical inline styles + JS flag, applied before first paint so the
+         page never flashes unstyled. With JS the body is hidden until styles
+         are ready then fades in; without JS the content stays fully visible
+         (crawlers / KYB review / reduced-motion). -->
+    <style>
+      html {
+        background: oklch(13% 0.012 256);
+      }
+      html.has-js body {
+        opacity: 0;
+      }
+      html.has-js body.is-ready {
+        opacity: 1;
+        transition: opacity 0.32s ease;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html.has-js body.is-ready {
+          transition: none;
+        }
+      }
+    </style>
+    <script>
+      document.documentElement.classList.add("has-js");
+      // Safety net: reveal even if the module script fails to boot.
+      setTimeout(function () {
+        document.body && document.body.classList.add("is-ready");
+      }, 1000);
+    </script>
+
+    <!-- Primary SEO -->
+    <title>Quant Mesh Limited: AI Compute Infrastructure SaaS | Hong Kong</title>
+    <meta
+      name="description"
+      content="Quant Mesh Limited is a Hong Kong software company delivering Software-as-a-Service for distributed AI compute: orchestration, inference and training at scale through an OpenAI-compatible API."
+    />
+    <meta name="author" content="Quant Mesh Limited" />
+    <meta
+      name="keywords"
+      content="Quant Mesh, Quant Mesh Limited, AI compute, distributed compute, SaaS, AI infrastructure, inference, GPU, Hong Kong software company, OpenAI compatible API"
+    />
+    <link rel="canonical" href="https://quantmesh.ai/" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Quant Mesh Limited" />
+    <meta property="og:title" content="Quant Mesh Limited: AI Compute Infrastructure SaaS" />
+    <meta
+      property="og:description"
+      content="Software-as-a-Service for distributed AI compute. Orchestration, inference and training at scale. Registered in Hong Kong."
+    />
+    <meta property="og:url" content="https://quantmesh.ai/" />
+    <meta property="og:image" content="https://quantmesh.ai/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Quant Mesh Limited: AI Compute Infrastructure SaaS" />
+    <meta
+      name="twitter:description"
+      content="Software-as-a-Service for distributed AI compute. Registered in Hong Kong."
+    />
+    <meta name="twitter:image" content="https://quantmesh.ai/og-image.png" />
+
+    <!-- Icons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+
+    <!-- Fonts: preconnect + swap, only critical weights -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap"
+    />
+
+    <!-- Structured data: Organization (high-value for KYB / search) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Quant Mesh Limited",
+        "legalName": "Quant Mesh Limited",
+        "url": "https://quantmesh.ai/",
+        "logo": "https://quantmesh.ai/favicon.svg",
+        "email": "business@quantmesh.ai",
+        "description": "Quant Mesh Limited is a Hong Kong software company providing Software-as-a-Service for distributed AI compute infrastructure, including orchestration, inference and training through an OpenAI-compatible API.",
+        "foundingLocation": {
+          "@type": "Place",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Sheung Wan",
+            "addressRegion": "Hong Kong",
+            "addressCountry": "HK"
+          }
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Unit A, 22/F, Wing Cheong Commercial Building, 23 Jervois Street, Sheung Wan",
+          "addressLocality": "Sheung Wan",
+          "addressRegion": "Hong Kong",
+          "addressCountry": "HK"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "business enquiries",
+          "email": "business@quantmesh.ai",
+          "areaServed": "Worldwide",
+          "availableLanguage": ["en"]
+        },
+        "areaServed": "Worldwide",
+        "knowsAbout": [
+          "Software as a Service",
+          "Distributed computing",
+          "Artificial intelligence infrastructure",
+          "Machine learning inference"
+        ]
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Quant Mesh Limited",
+        "url": "https://quantmesh.ai/",
+        "publisher": { "@type": "Organization", "name": "Quant Mesh Limited" }
+      }
+    </script>
+
+    <script type="module" src="/src/main.ts"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- ============ NAV ============ -->
+    <header class="nav" data-nav>
+      <div class="container nav__inner">
+        <a class="nav__brand" href="#top" aria-label="Quant Mesh home">
+          <span class="nav__mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none">
+              <path
+                d="M12 2 3 7v10l9 5 9-5V7l-9-5Z"
+                stroke="currentColor"
+                stroke-width="1.3"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M12 2v20M3 7l9 5 9-5M3 17l9-5 9 5"
+                stroke="currentColor"
+                stroke-width="1.1"
+                opacity="0.6"
+              />
+            </svg>
+          </span>
+          <span class="nav__name">Quant&nbsp;Mesh</span>
+        </a>
+
+        <nav class="nav__links" aria-label="Primary">
+          <a href="#solutions">Solutions</a>
+          <a href="#platform">Platform</a>
+          <a href="#company">Company</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <a class="btn btn--ghost nav__cta" href="#contact" data-magnetic>Get in touch</a>
+
+        <button
+          class="nav__toggle"
+          aria-label="Toggle navigation menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          data-nav-toggle
+        >
+          <span></span><span></span>
+        </button>
+      </div>
+
+      <div class="nav__mobile" id="mobile-menu" hidden>
+        <a href="#solutions">Solutions</a>
+        <a href="#platform">Platform</a>
+        <a href="#company">Company</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </header>
+
+    <main id="main">
+      <span id="top"></span>
+
+      <!-- ============ HERO ============ -->
+      <section class="hero" aria-labelledby="hero-heading">
+        <div class="hero__bg" aria-hidden="true">
+          <video
+            class="hero__video"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="metadata"
+            poster="/media/mesh-poster.jpg"
+            data-hero-video
+          >
+            <source src="/media/mesh-bg.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <canvas class="hero__mesh" data-mesh aria-hidden="true"></canvas>
+        <div class="hero__veil" aria-hidden="true"></div>
+
+        <div class="container hero__inner">
+          <p class="eyebrow" data-reveal>Software as a Service · Hong Kong</p>
+          <h1 class="hero__title" id="hero-heading" data-reveal style="--reveal-delay: 60ms">
+            Distributed compute<br />
+            infrastructure for<br />
+            <span class="hero__accent">the AI era.</span>
+          </h1>
+          <p class="hero__lede" data-reveal style="--reveal-delay: 140ms">
+            Quant Mesh Limited builds software that turns fragmented GPU capacity into a
+            single, programmable mesh: orchestration, inference and training delivered as a
+            service through one OpenAI-compatible API.
+          </p>
+          <div class="hero__actions" data-reveal style="--reveal-delay: 220ms">
+            <a class="btn btn--primary" href="#solutions" data-magnetic>Explore the platform</a>
+            <a class="btn btn--ghost" href="#contact" data-magnetic>Contact us</a>
+          </div>
+
+          <dl class="hero__stats" data-reveal style="--reveal-delay: 300ms">
+            <div>
+              <dt>Compute model</dt>
+              <dd>Distributed mesh</dd>
+            </div>
+            <div>
+              <dt>Interface</dt>
+              <dd>OpenAI-compatible API</dd>
+            </div>
+            <div>
+              <dt>Delivery</dt>
+              <dd>Cloud SaaS</dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="hero__scroll" aria-hidden="true">
+          <span>Scroll</span>
+          <i></i>
+        </div>
+      </section>
+
+      <!-- ============ SOLUTIONS (bento) ============ -->
+      <section class="section" id="solutions" aria-labelledby="solutions-heading">
+        <div class="container">
+          <header class="section-head">
+            <p class="eyebrow" data-reveal>What we do</p>
+            <h2 class="section-title" id="solutions-heading" data-reveal>
+              One platform across the AI compute lifecycle
+            </h2>
+            <p class="lede" data-reveal>
+              Quant Mesh is delivered entirely as software: a managed SaaS layer that schedules,
+              routes and observes AI workloads across a distributed network of accelerators.
+            </p>
+          </header>
+
+          <div class="bento">
+            <article class="card card--lg" data-reveal="scale">
+              <div class="card__icon" aria-hidden="true">⬡</div>
+              <h3 class="card__title">Compute orchestration</h3>
+              <p class="card__body">
+                Schedule and route workloads across heterogeneous GPUs, from a single device to
+                full data centres. The mesh allocates capacity to where it is most productive:
+                no idle silicon, no lock-in.
+              </p>
+              <ul class="card__tags">
+                <li>Scheduling</li>
+                <li>Routing</li>
+                <li>Autoscaling</li>
+              </ul>
+
+              <svg
+                class="card__schematic"
+                viewBox="0 0 480 150"
+                fill="none"
+                role="img"
+                aria-label="Diagram: a central scheduler routing workloads across a mesh of GPU nodes"
+              >
+                <g class="card__schematic-links" stroke="currentColor" stroke-width="1.2">
+                  <path d="M240 75 L80 36" /><path d="M240 75 L80 114" />
+                  <path d="M240 75 L150 18" /><path d="M240 75 L150 132" />
+                  <path d="M240 75 L330 30" /><path d="M240 75 L330 120" />
+                  <path d="M240 75 L400 56" /><path d="M240 75 L400 96" />
+                  <path d="M80 36 L150 18" /><path d="M330 30 L400 56" />
+                  <path d="M330 120 L400 96" /><path d="M80 114 L150 132" />
+                </g>
+                <g class="card__schematic-nodes" fill="currentColor">
+                  <circle cx="80" cy="36" r="3.5" /><circle cx="80" cy="114" r="3.5" />
+                  <circle cx="150" cy="18" r="3.5" /><circle cx="150" cy="132" r="3.5" />
+                  <circle cx="330" cy="30" r="3.5" /><circle cx="330" cy="120" r="3.5" />
+                  <circle cx="400" cy="56" r="3.5" /><circle cx="400" cy="96" r="3.5" />
+                </g>
+                <circle class="card__schematic-core" cx="240" cy="75" r="9" />
+                <circle class="card__schematic-pulse" cx="240" cy="75" r="9" />
+              </svg>
+            </article>
+
+            <article class="card" data-reveal="scale" style="--reveal-delay: 80ms">
+              <div class="card__icon" aria-hidden="true">⟆</div>
+              <h3 class="card__title">OpenAI-compatible API</h3>
+              <p class="card__body">
+                Build on decentralised infrastructure without rewriting a line. A drop-in,
+                standards-aligned API surface keeps your stack portable.
+              </p>
+            </article>
+
+            <article class="card" data-reveal="scale" style="--reveal-delay: 160ms">
+              <div class="card__icon" aria-hidden="true">◍</div>
+              <h3 class="card__title">Inference &amp; training</h3>
+              <p class="card__body">
+                Run low-latency inference and large-scale training on the same fabric, with
+                workload isolation and predictable throughput.
+              </p>
+            </article>
+
+            <article class="card card--wide" data-reveal="scale" style="--reveal-delay: 240ms">
+              <div class="card__icon" aria-hidden="true">◷</div>
+              <h3 class="card__title">Observability &amp; control</h3>
+              <p class="card__body">
+                Real-time telemetry across the mesh (utilisation, latency and cost) with
+                policy controls that keep every workload accountable and auditable.
+              </p>
+              <ul class="card__tags">
+                <li>Telemetry</li>
+                <li>Cost controls</li>
+                <li>Audit logs</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ PLATFORM ============ -->
+      <section class="section section--alt section--mesh" id="platform" aria-labelledby="platform-heading">
+        <canvas
+          class="section__mesh"
+          data-mesh
+          data-mesh-max="56"
+          data-mesh-density="24000"
+          data-mesh-link="124"
+          aria-hidden="true"
+        ></canvas>
+        <div class="container platform">
+          <div class="platform__intro">
+            <p class="eyebrow" data-reveal>How it works</p>
+            <h2 class="section-title" id="platform-heading" data-reveal>
+              A programmable mesh, from edge to cluster
+            </h2>
+            <p class="lede" data-reveal>
+              Capacity joins the network, the platform verifies and meshes it, and your
+              application consumes it through a single endpoint. Software does the rest.
+            </p>
+          </div>
+
+          <ol class="steps">
+            <li class="step" data-reveal="left">
+              <span class="step__num">01</span>
+              <h3 class="step__title">Aggregate</h3>
+              <p class="step__body">
+                Accelerators of any size connect to the mesh. Each node is fingerprinted and
+                continuously health-checked before it receives traffic.
+              </p>
+            </li>
+            <li class="step" data-reveal="left" style="--reveal-delay: 110ms">
+              <span class="step__num">02</span>
+              <h3 class="step__title">Orchestrate</h3>
+              <p class="step__body">
+                The scheduler places each workload on the most suitable capacity, balancing
+                latency, locality and cost in real time.
+              </p>
+            </li>
+            <li class="step" data-reveal="left" style="--reveal-delay: 220ms">
+              <span class="step__num">03</span>
+              <h3 class="step__title">Serve</h3>
+              <p class="step__body">
+                Applications call one OpenAI-compatible endpoint. Routing, failover and scaling
+                are handled by the platform, invisibly.
+              </p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ============ TRUST / METRICS ============ -->
+      <section class="section trust" aria-label="Platform principles">
+        <div class="container">
+          <ul class="metrics">
+            <li class="metric" data-reveal="scale">
+              <span class="metric__value">100%</span>
+              <span class="metric__label">Software-defined, vendor-neutral</span>
+            </li>
+            <li class="metric" data-reveal="scale" style="--reveal-delay: 70ms">
+              <span class="metric__value">1&nbsp;API</span>
+              <span class="metric__label">OpenAI-compatible surface</span>
+            </li>
+            <li class="metric" data-reveal="scale" style="--reveal-delay: 140ms">
+              <span class="metric__value">24/7</span>
+              <span class="metric__label">Continuous health-checked mesh</span>
+            </li>
+            <li class="metric" data-reveal="scale" style="--reveal-delay: 210ms">
+              <span class="metric__value">Global</span>
+              <span class="metric__label">Distributed across regions</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ============ COMPANY / ABOUT (KYB) ============ -->
+      <section class="section section--alt" id="company" aria-labelledby="company-heading">
+        <div class="container company">
+          <div class="company__copy">
+            <p class="eyebrow" data-reveal>The company</p>
+            <h2 class="section-title" id="company-heading" data-reveal>
+              Built and registered in Hong Kong
+            </h2>
+            <p class="lede" data-reveal>
+              Quant Mesh Limited is a software company headquartered in Sheung Wan, Hong Kong.
+              We design and operate Software-as-a-Service for AI compute infrastructure, serving
+              developers and enterprises building on distributed accelerators.
+            </p>
+            <p class="company__note" data-reveal>
+              Our business is entirely software: we license access to our platform on a
+              subscription and usage basis. We do not provide financial services or custody of
+              client assets.
+            </p>
+          </div>
+
+          <dl class="company__facts" data-reveal="right" style="--reveal-delay: 80ms">
+            <div class="fact">
+              <dt>Legal name</dt>
+              <dd>Quant Mesh Limited</dd>
+            </div>
+            <div class="fact">
+              <dt>Nature of business</dt>
+              <dd>Software as a Service (AI compute infrastructure)</dd>
+            </div>
+            <div class="fact">
+              <dt>Jurisdiction</dt>
+              <dd>Hong Kong SAR, China</dd>
+            </div>
+            <div class="fact">
+              <dt>Registered office</dt>
+              <dd>
+                Unit A, 22/F, Wing Cheong Commercial Building,<br />
+                23 Jervois Street, Sheung Wan, Hong Kong
+              </dd>
+            </div>
+            <div class="fact">
+              <dt>Contact</dt>
+              <dd><a href="mailto:business@quantmesh.ai">business@quantmesh.ai</a></dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <!-- ============ CONTACT (KYB) ============ -->
+      <section class="section contact" id="contact" aria-labelledby="contact-heading">
+        <div class="container contact__inner">
+          <div class="contact__lead">
+            <p class="eyebrow" data-reveal>Contact</p>
+            <h2 class="section-title" id="contact-heading" data-reveal>
+              Let&rsquo;s talk about your workloads
+            </h2>
+            <p class="lede" data-reveal>
+              For partnerships, platform access or business enquiries, reach our team directly.
+              We respond to every legitimate request.
+            </p>
+          </div>
+
+          <address class="contact__cards" data-reveal="right" style="--reveal-delay: 80ms">
+            <a class="contact-card" href="mailto:business@quantmesh.ai" data-magnetic>
+              <span class="contact-card__label">Email</span>
+              <span class="contact-card__value">business@quantmesh.ai</span>
+              <span class="contact-card__arrow" aria-hidden="true">→</span>
+            </a>
+            <div class="contact-card contact-card--static">
+              <span class="contact-card__label">Registered office</span>
+              <span class="contact-card__value">
+                Unit A, 22/F, Wing Cheong Comm. Bldg.,<br />
+                23 Jervois St., Sheung Wan, Hong Kong
+              </span>
+            </div>
+          </address>
+        </div>
+      </section>
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+      <div class="container footer__inner">
+        <div class="footer__brand">
+          <span class="nav__mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none">
+              <path
+                d="M12 2 3 7v10l9 5 9-5V7l-9-5Z"
+                stroke="currentColor"
+                stroke-width="1.3"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </span>
+          <span>Quant Mesh Limited</span>
+        </div>
+
+        <nav class="footer__nav" aria-label="Footer">
+          <a href="#solutions">Solutions</a>
+          <a href="#platform">Platform</a>
+          <a href="#company">Company</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <p class="footer__legal">
+          Unit A, 22/F, Wing Cheong Comm. Bldg., 23 Jervois St., Sheung Wan, Hong Kong ·
+          <a href="mailto:business@quantmesh.ai">business@quantmesh.ai</a>
+        </p>
+
+        <p class="footer__copy">
+          © 2026 Quant Mesh Limited. All rights reserved. Registered in Hong Kong.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

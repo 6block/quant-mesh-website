@@ -1,0 +1,81 @@
+/* ============================================================
+   Design tokens — Quant Mesh
+   Direction: dark luxury / deep-tech, single electric-cyan accent,
+   living mesh motif. All color in oklch for perceptual control.
+   ============================================================ */
+
+:root {
+  /* --- Surface ladder (near-black, slightly cool) --- */
+  --color-bg: oklch(13% 0.012 256);
+  --color-bg-2: oklch(15.5% 0.014 256);
+  --color-surface: oklch(18% 0.016 256);
+  --color-surface-2: oklch(21% 0.018 256);
+  --color-line: oklch(30% 0.02 256 / 0.5);
+  --color-line-strong: oklch(40% 0.025 256 / 0.7);
+
+  /* --- Text --- */
+  --color-text: oklch(96% 0.005 256);
+  --color-text-muted: oklch(72% 0.012 256);
+  --color-text-dim: oklch(58% 0.014 256);
+
+  /* --- Accent: electric cyan --- */
+  --color-accent: oklch(78% 0.142 200);
+  --color-accent-bright: oklch(86% 0.15 197);
+  --color-accent-deep: oklch(62% 0.13 220);
+  --color-accent-glow: oklch(80% 0.16 200 / 0.45);
+  --color-accent-ink: oklch(20% 0.04 220);
+
+  /* --- Mesh / atmosphere --- */
+  --mesh-node: oklch(82% 0.12 200 / 0.9);
+  --mesh-link: oklch(70% 0.09 210 / 0.22);
+  --grid-line: oklch(60% 0.03 256 / 0.05);
+
+  /* --- Typography --- */
+  --font-display: "Space Grotesk", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: ui-monospace, "SF Mono", "Menlo", monospace;
+
+  --text-xs: 0.78rem;
+  --text-sm: 0.875rem;
+  --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  --text-lg: clamp(1.18rem, 1.05rem + 0.6vw, 1.4rem);
+  --text-xl: clamp(1.5rem, 1.2rem + 1.4vw, 2.1rem);
+  --text-2xl: clamp(2.1rem, 1.5rem + 2.6vw, 3.4rem);
+  --text-hero: clamp(2.7rem, 1.2rem + 6.4vw, 6.4rem);
+
+  --leading-tight: 1.05;
+  --leading-snug: 1.25;
+  --leading-normal: 1.6;
+  --tracking-tight: -0.022em;
+  --tracking-wide: 0.16em;
+
+  /* --- Spacing / rhythm --- */
+  --space-2xs: 0.5rem;
+  --space-xs: 0.75rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2.5rem;
+  --space-xl: 4rem;
+  --space-section: clamp(5rem, 3.5rem + 6vw, 9rem);
+  --maxw: 1200px;
+  --maxw-text: 62ch;
+
+  /* --- Radii --- */
+  --radius-sm: 0.5rem;
+  --radius-md: 0.875rem;
+  --radius-lg: 1.25rem;
+  --radius-xl: 1.75rem;
+  --radius-pill: 999px;
+
+  /* --- Elevation --- */
+  --shadow-sm: 0 1px 2px oklch(0% 0 0 / 0.4);
+  --shadow-md: 0 12px 40px oklch(0% 0 0 / 0.45);
+  --shadow-glow: 0 0 0 1px oklch(78% 0.142 200 / 0.4), 0 8px 40px oklch(78% 0.142 200 / 0.18);
+
+  /* --- Motion --- */
+  --dur-fast: 150ms;
+  --dur-normal: 320ms;
+  --dur-slow: 620ms;
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-soft: cubic-bezier(0.22, 0.61, 0.36, 1);
+}

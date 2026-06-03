@@ -1,0 +1,194 @@
+/* ============ Hero ============ */
+
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding-block: clamp(7rem, 14vh, 11rem) var(--space-xl);
+}
+
+/* Cinematic video base layer — a glass compute-core that echoes the logo. */
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  background: var(--color-bg);
+}
+
+.hero__video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Push the cube right of centre so it sits behind/beside the headline. */
+  object-position: 72% center;
+  opacity: 0.92;
+}
+
+/* Branded network mesh, screen-blended over the crystal core. */
+.hero__mesh {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  mix-blend-mode: screen;
+  opacity: 0.6;
+}
+
+/* Veil: darkens the left so white text stays legible, reveals the cube on the
+   right, and fades the base into the page below. */
+.hero__veil {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background:
+    linear-gradient(
+      90deg,
+      var(--color-bg) 10%,
+      oklch(13% 0.012 256 / 0.55) 44%,
+      transparent 80%
+    ),
+    radial-gradient(72% 60% at 24% 44%, var(--color-bg) 0%, transparent 60%),
+    linear-gradient(180deg, transparent 56%, var(--color-bg) 100%);
+  pointer-events: none;
+}
+
+.hero__inner {
+  position: relative;
+  z-index: 3;
+}
+
+.hero__title {
+  font-size: var(--text-hero);
+  font-weight: 700;
+  margin-block: var(--space-md) var(--space-lg);
+  letter-spacing: -0.03em;
+}
+
+.hero__accent {
+  position: relative;
+  background: linear-gradient(
+    100deg,
+    var(--color-accent-bright),
+    var(--color-accent) 45%,
+    var(--color-accent-deep)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero__lede {
+  max-width: 54ch;
+  font-size: var(--text-lg);
+  color: var(--color-text-muted);
+  line-height: var(--leading-normal);
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-top: var(--space-lg);
+}
+
+.hero__stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+  margin-top: var(--space-xl);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--color-line);
+  max-width: 640px;
+}
+
+.hero__stats dt {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-dim);
+  margin-bottom: 0.35rem;
+}
+
+.hero__stats dd {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.hero__scroll {
+  position: absolute;
+  bottom: 1.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-text-dim);
+}
+
+.hero__scroll i {
+  width: 1px;
+  height: 38px;
+  background: linear-gradient(var(--color-accent), transparent);
+  animation: scroll-pulse 2.4s var(--ease-out-soft) infinite;
+}
+
+@keyframes scroll-pulse {
+  0%,
+  100% {
+    transform: scaleY(0.4);
+    opacity: 0.4;
+    transform-origin: top;
+  }
+  50% {
+    transform: scaleY(1);
+    opacity: 1;
+    transform-origin: top;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__scroll i {
+    animation: none;
+  }
+}
+
+@media (max-width: 760px) {
+  .hero__stats {
+    gap: 1.5rem 2.5rem;
+  }
+  .hero__scroll {
+    display: none;
+  }
+  /* Centre the crystal core and dim the bright rays so they don't crowd the
+     nav / eyebrow on narrow screens. */
+  .hero__video {
+    object-position: 58% center;
+    opacity: 0.78;
+  }
+  .hero__veil {
+    background:
+      linear-gradient(
+        180deg,
+        oklch(13% 0.012 256 / 0.55) 0%,
+        oklch(13% 0.012 256 / 0.15) 22%,
+        oklch(13% 0.012 256 / 0.55) 46%,
+        var(--color-bg) 66%
+      ),
+      radial-gradient(95% 40% at 62% 26%, transparent 0%, var(--color-bg) 88%);
+  }
+}

@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" font-family="'Space Grotesk', system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1014" />
+      <stop offset="1" stop-color="#0d141a" />
+    </linearGradient>
+    <radialGradient id="glow" cx="78%" cy="28%" r="60%">
+      <stop offset="0" stop-color="#1d3a44" stop-opacity="0.9" />
+      <stop offset="1" stop-color="#0b1014" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="acc" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#7fe8ff" />
+      <stop offset="1" stop-color="#3aa6cc" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <rect width="1200" height="630" fill="url(#glow)" />
+
+  <!-- faint grid -->
+  <g stroke="#2a3a44" stroke-width="1" opacity="0.18">
+    <path d="M0 90H1200M0 180H1200M0 270H1200M0 360H1200M0 450H1200M0 540H1200" />
+    <path d="M120 0V630M240 0V630M360 0V630M480 0V630M600 0V630M720 0V630M840 0V630M960 0V630M1080 0V630" />
+  </g>
+
+  <!-- mesh motif, right side -->
+  <g transform="translate(870 315)" opacity="0.92">
+    <g fill="none" stroke="url(#acc)" stroke-width="2" stroke-linejoin="round">
+      <path d="M0 -150 -130 -75 -130 75 0 150 130 75 130 -75Z" opacity="0.5" />
+      <path d="M0 -150V150M-130 -75 0 0 130 -75M-130 75 0 0 130 75" opacity="0.35" />
+      <path d="M0 -90 -78 -45 -78 45 0 90 78 45 78 -45Z" opacity="0.7" />
+    </g>
+    <g fill="#7fe8ff">
+      <circle cx="0" cy="-150" r="6" /><circle cx="-130" cy="-75" r="6" />
+      <circle cx="130" cy="-75" r="6" /><circle cx="0" cy="150" r="6" />
+      <circle cx="-130" cy="75" r="6" /><circle cx="130" cy="75" r="6" />
+      <circle cx="0" cy="0" r="7" />
+    </g>
+  </g>
+
+  <!-- brand mark -->
+  <g transform="translate(90 86)">
+    <path d="M22 0 0 12.5 0 37.5 22 50 44 37.5 44 12.5Z" fill="none" stroke="url(#acc)" stroke-width="2.4" stroke-linejoin="round" />
+    <text x="62" y="35" font-size="30" font-weight="600" fill="#eef6f8">Quant Mesh</text>
+  </g>
+
+  <!-- headline -->
+  <text x="90" y="300" font-size="72" font-weight="700" fill="#f2f8fa" letter-spacing="-2">Distributed compute</text>
+  <text x="90" y="382" font-size="72" font-weight="700" letter-spacing="-2" fill="url(#acc)">infrastructure for the AI era</text>
+
+  <!-- subline -->
+  <text x="92" y="452" font-size="27" fill="#9fb2bb" font-family="Inter, system-ui, sans-serif">Software as a Service · AI compute orchestration · Hong Kong</text>
+
+  <!-- footer line -->
+  <text x="92" y="560" font-size="22" fill="#6f828c" font-family="Inter, system-ui, sans-serif">Quant Mesh Limited</text>
+  <text x="1108" y="560" font-size="22" fill="#6f828c" text-anchor="end" font-family="Inter, system-ui, sans-serif">quantmesh.ai</text>
+</svg>
